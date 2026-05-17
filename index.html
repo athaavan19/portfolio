@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BennyBen Portfolio</title>
+
+    <!-- Website Icon-->
+    <link rel="icon" href="img/Logo/1.avif" type="image/png">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Font (lightweight) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+     
+        <!-- VIDEO LOADER -->
+        <div id="loader">
+            <video autoplay muted playsinline id="loader-video">
+                <source src="vid/loading.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">BennyBen</h1>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <!-- HERO -->
+        <section id="home" class="hero">
+
+            <!-- Background Video -->
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="vid/loading.mp4" type="video/mp4">
+            </video>
+
+            <!-- Dark Overlay -->
+            <div class="overlay"></div>
+
+            <!-- Grid -->
+            <div class="grid-bg"></div>
+
+            <!-- Content -->
+            <div class="hero-content">
+
+                <!-- Video Section -->
+                <section class="video-section">
+                    <h2 class="hero-title">Design<br>Portfolio</h2>
+
+                                <!--   <video id="scrollVideo" autoplay muted loop playsinline>
+                                        <source src="vid/1.mp4" type="video/mp4">
+                                    </video>
+                                -->
+
+                    <p class="hero-sub">Creative Director • Visual Thinker</p>
+                </section>              
+            </div>
+
+        </section>
+
+        <!-- ABOUT -->
+         
+        <section id="about" class="section p">
+            <h1>About Me</h1>
+            <img src="img/profile.png" alt="Profile image" class="profile-img">
+            <p>
+                I’m Athaavan Ganisen, also known as Benny, a Creative Multimedia student at the University of Cyberjaya 
+                with a passion for visual storytelling and creative design. I specialize in video editing, cinematography,
+                 videography, and photography, creating visuals that are both impactful and meaningful. Skilled in Adobe 
+                 Premiere Pro, After Effects, Photoshop, Illustrator, Lightroom, Figma, Canva, and Microsoft tools, I 
+                 combine creativity with technical skills to bring ideas to life. I’m a detail-oriented and creative 
+                 thinker who believes great design is not just about visuals, but also emotion, communication, and purpose.
+            </p>
+        </section>
+
+        <!-- Education & Experience -->
+        <section id="education" class="section">
+            <h1>Education & Experience</h1>
+            <br>
+            <div>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Institution</th>
+                            <th scope="col">Programme</th>
+                            <th scope="col">Achievements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>SJK(T) Ladang Sri Gading</td>
+                            <td>Standard 1 - 4</td>
+                            <td>Competed in various competitions especially
+                                in tamil & english</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>SJK(T) Seri Pelangi</td>
+                            <td>Standard 5 - 6</td>
+                            <td>Became face of school for UPSR results and
+                                represented the school in various events</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>SMK Dato' Bentara Luar</td>
+                            <td>Form 1 - 5</td>
+                            <td>Computer Science student and Freelance video editor</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>University of Cyberjaya</td>
+                            <td>Foundation in Arts</td>
+                            <td>Head of IT for Foundation student association</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>University of Cyberjaya</td>
+                            <td>Foundation in Arts</td>
+                            <td>Director for UOC Showdown: MLBB Competition</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>University of Cyberjaya</td>
+                            <td>Bachelor's in Creative Multimedia</td>
+                            <td>Head of Media for Communication Masters Club</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>University of Cyberjaya</td>
+                            <td>Bachelor's in Creative Multimedia</td>
+                            <td>Vice President for Theatre and Traditional Arts Club</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>University of Cyberjaya</td>
+                            <td>Bachelor's in Creative Multimedia</td>
+                            <td>Faculty Representative for Student Council</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+       <!-- PROJECTS -->
+<section id="projects" class="section">
+    <h1>Projects</h1>
+    <br>
+    <div class="project-grid">
+
+        <!-- Video Editing Projects (Static Example) -->
+        <div class="card">
+            <a href="img/Video-Editing/1.jpg" target="_blank">
+                <img src="img/Video-Editing/1.jpg" alt="Project 1 image" class="project-card-img">
+            </a>
+            <h3>Video Editing</h3>
+            <p>Various video editing projects for different clients.</p>
+        </div>
+
+        <!-- Design Projects (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Canvas" data-ext="png">
+                <!-- JS will inject images here -->
+            </div>
+            <br>
+            <h3>Brand Design</h3>
+            <p>Visual identity and logo exploration.</p>
+        </div>
+
+        <!-- Digital Arts (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Digital-Art" data-ext="jpg">
+            </div>
+            <br>
+            <h3>Digital Arts</h3>
+            <p>Creative digital artwork and illustrations.</p>
+        </div>
+
+        <!-- Menu Design (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Menu-Design" data-ext="png">
+            </div>
+            <br>
+            <h3>Menu Design</h3>
+            <p>Creative menu designs for restaurants.</p>
+        </div>
+
+        <!-- Photo Manipulation (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Photo-Manipulation" data-ext="png">
+            </div>
+            <br>
+            <h3>Photo Manipulation</h3>
+            <p>Creative photo editing and compositing.</p>
+        </div>
+
+        <!-- Photography (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Photography" data-ext="jpg">
+            </div>
+            <br>
+            <h3>Photography</h3>
+            <p>Creative photo editing and compositing.</p>
+        </div>
+
+        <!-- Custom Font (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Custom-Font" data-ext="png">
+            </div>
+            <br>
+            <h3>The Bentiger</h3>
+            <p>Design and creation of custom typography.</p>
+        </div>
+
+        <!-- Icon Design (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Icon-Design" data-ext="png">
+            </div>
+            <br>
+            <h3>Icon Design</h3>
+            <p>Design and creation of custom icons.</p>
+        </div>
+
+        <!-- Flyer Design (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Flyers-&-Banner" data-ext="png">
+            </div>
+            <br>
+            <h3>Flyer Design</h3>
+            <p>Design and creation of custom flyers.</p>
+        </div>
+
+        <!-- Rebranding Design (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Rebranding" data-ext="jpg">
+            </div>
+            <br>
+            <h3>Rebranding Design</h3>
+            <p>Design and creation of custom rebranding solutions for Sea Games 2027.</p>
+        </div>
+
+        <!-- Business Card Design (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Business-Card" data-ext="png">
+            </div>
+            <br>
+            <h3>Business Card Design</h3>
+            <p>Design and creation of custom business cards.</p>
+        </div>
+
+        <!-- Digital Mockup Design (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Digital-Mockup" data-ext="png">
+            </div>
+            <br>
+            <h3>Digital Mockup Design</h3>
+            <p>Design and creation of custom digital mockups.</p>
+        </div>
+
+        <!-- Custom Murals (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Custom-Mural" data-ext="png">
+            </div>
+            <br>
+            <h3>Custom Murals</h3>
+            <p>Design and creation of custom murals.</p>
+        </div>
+
+        <!-- Script Writing & Storyboarding (Auto-load) -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Script&Storyboarding" data-ext="png">
+            </div>
+            <br>
+            <h3>Script Writing & Storyboarding</h3>
+            <p>Design and creation of custom scripts and storyboards.</p>
+        </div>
+
+        <!-- Part time talent -->
+        <div class="card">
+            <div class="slideshow auto-load" data-folder="Talent" data-ext="jpg">
+            </div>
+            <br>
+            <h3>Part Time Talent</h3>
+            <p>Available for part-time acting roles.</p>
+        </div>
+    </div>
+</section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <br>
+            <a href="img/cv.pdf" class="viewfinder-btn" target="_blank">Download CV</a>
+
+            <a href="mailto:athaavan19@gmail.com" class="viewfinder-btn">
+                <span class="btn-text">Contact Me</span>
+                <span class="btn-glitch"></span>
+            </a>
+
+        </section>
+
+
+        <footer>
+            <p>© 2026 BennyBen. All rights reserved</p>
+        </footer>
+
+        <!-- Link to external JS Engine -->
+        <script src="script.js"></script>
+        
+        
+        
+</body>
+
+</html>
