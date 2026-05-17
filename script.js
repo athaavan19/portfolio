@@ -157,3 +157,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 3000); 
     }
 });
+
+/* Navbar toggle for mobile */
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});

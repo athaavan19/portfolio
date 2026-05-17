@@ -23,7 +23,7 @@ body {
 /* BACKGROUND DESIGN */
 body {
     background-color: #050505; /* Deep carbon base */
-    background-image: radial-gradient(rgba(15, 238, 234, 0.404) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(15, 238, 234, 0.605) 1px, transparent 1px);
     background-size: 30px 30px; /* Size of the grid squares */
     color: #fff;
     font-family: 'Space Grotesk', sans-serif;
@@ -124,17 +124,17 @@ body {
     }
 
     .nav-links {
-        background-color: rgb(255, 255, 255);
-        position: absolute;
-        top: 70px;
-        right: -220px;
+        /* CHANGED: Fixed positioning escapes the clip-path mask */
+        position: fixed; 
+        top: 70px; /* Adjust this if your navbar is taller/shorter */
+        right: -100%; /* Pushes it completely off screen */
         background: #111;
         width: 200px;
         flex-direction: column;
         align-items: center;
         padding: 20px 0;
         border-left: 1px solid #333;
-        transition: 0.3s;
+        transition: 0.3s right ease-in-out; /* Smoother slide in */
     }
 
     .nav-links li {
@@ -143,11 +143,11 @@ body {
 
     .nav-links.active {
         width: 100%;
-        height: 100%;
+        /* CHANGED: Fills the viewport beneath the navbar */
+        height: calc(100vh - 70px); 
         background-color: black;
         right: 0;
         display: flex;
-        cursor: pointer !important;
     }
 }
 
@@ -241,12 +241,13 @@ body {
 }
 
 /* Title styling */
-.hero-title {
-    font-size: 4rem;
-    font-weight: bold;
-    margin: 0;
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem; /* Shrunk down for mobile */
+        font-weight: bold;
+        margin: 0;
+    }
 }
-
 /* Sub text */
 .hero-sub {
     margin-top: 10px;
