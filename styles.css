@@ -12,16 +12,9 @@
     --accent: #ff3c1f;
 }
 
-/* BODY 
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-}
-*/
 
 /* BACKGROUND DESIGN */
-body {
+html, body {
     background-color: #050505; /* Deep carbon base */
     background-image: radial-gradient(rgba(15, 238, 234, 0.605) 1px, transparent 1px);
     background-size: 30px 30px; /* Size of the grid squares */
@@ -137,6 +130,7 @@ body {
     .nav-links {
         position: fixed; 
         top: 70px; 
+        left: 0;
         right: -100%; 
         width: 100%; /* Takes up the full width instead of just 200px */
         flex-direction: column;
@@ -148,6 +142,7 @@ body {
 
     .nav-links.active {
         height: calc(100vh - 70px); 
+        left: 0;
         right: 0;
         display: flex;
         z-index: 9999; 
@@ -209,7 +204,8 @@ body {
 
 /* VIDEO */
 #loader-video {
-    width: 500px; /* change size */
+    width: 100%; /* change size */
+    max-width: 500px;
     height: auto;
     object-fit: cover;
 }
@@ -545,11 +541,6 @@ footer {
     .project-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-}
-body {
-    margin: 0;
-    background: black;
-    height: 300vh; /* gives scroll space */
 }
 
 /* =========================================
