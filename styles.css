@@ -110,7 +110,6 @@ html, body {
         display: block;
         position: relative; 
         z-index: 1001; 
-        /* Adds a subtle cyan glow to the hamburger icon when clicked */
         transition: color 0.3s ease, text-shadow 0.3s ease;
     }
     
@@ -127,38 +126,37 @@ html, body {
         position: relative;
     }
 
+    /* FIXED: Holds the menu completely off-screen to the right until triggered */
     .nav-links {
         position: fixed; 
         top: 70px; 
-        left: 0;
-        right: -100%; 
-        width: 100%; /* Takes up the full width instead of just 200px */
+        right: -100%; /* NO 'left' property here! This keeps it hidden */
+        width: 100%; 
+        height: calc(100vh - 70px); /* Keeps the height ready for action */
         flex-direction: column;
         align-items: center;
-        justify-content: center; /* Centers the links vertically */
+        justify-content: center; 
         padding: 0;
-        transition: 0.4s right cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy sci-fi slide-in */
-    }
-
-    .nav-links.active {
-        height: calc(100vh - 70px); 
-        left: 0;
-        right: 0;
-        display: flex;
-        z-index: 9999; 
+        margin: 0; /* Clears out your desktop margin override */
         
-        /* The Cyberpunk Glass Backdrop */
+        /* Cyberpunk HUD Styles applied directly to the base wrapper */
         background: rgba(5, 5, 5, 0.95);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         border-top: 1px solid rgba(0, 255, 204, 0.2);
-        
-        /* Subtle Scanner Lines */
         background-image: linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px);
         background-size: 100% 4px;
+        
+        transition: 0.4s right cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     }
 
-    /* Upgraded Mobile Typography */
+    /* Smoothly slides the entire styled deck onto the screen */
+    .nav-links.active {
+        right: 0; 
+        z-index: 9999; 
+        display: flex;
+    }
+
     .nav-links li {
         margin: 25px 0;
         width: 100%;
@@ -178,7 +176,6 @@ html, body {
         position: relative;
     }
 
-    /* The "Director" Hover State */
     .nav-links a:hover {
         color: #00ffcc;
         text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
@@ -190,7 +187,7 @@ html, body {
 /* FULLSCREEN LOADER */
 #loader {
     position: fixed;
-    width: 100%;
+    width: 100vw; /* Uses exact viewport width */
     height: 100vh;
     background: black;
     display: flex;
@@ -199,15 +196,16 @@ html, body {
     z-index: 99999;
     top: 0;
     left: 0;
+    overflow: hidden; /* CRITICAL: Prevents any video spilling over from creating a scrollbar */
     transition: opacity 0.5s ease;
 }
 
-/* VIDEO */
+/* VIDEO INSIDE LOADER */
 #loader-video {
-    width: 100%; /* change size */
-    max-width: 500px;
+    width: 85%; /* Takes up 85% of mobile screen width so it never overflows */
+    max-width: 450px; /* Caps it at a clean size on desktop screens */
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* VIDEO */
