@@ -149,6 +149,29 @@ html, body {
         
         transition: 0.4s right cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     }
+    /* Prevents the massive data table from stretching the screen width */
+    #education div {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Makes scrolling smooth on iPhones */
+        padding: 0 10px;
+    }
+    
+    .custom-table {
+        width: 100%; /* Switch from 90% to fill the new scroll container cleanly */
+        min-width: 500px; /* Ensures the table data doesn't get horribly squished */
+    }
+    /* Extra optimization for small phone screens */
+    @media (max-width: 480px) {
+        .navbar {
+            padding: 1rem; /* Shrinks navbar padding so elements don't pop out */
+        }
+        
+        .project-grid {
+            grid-template-columns: 1fr; /* Forces a clean single column layout */
+            padding: 10px; /* Drops padding down to save screen space */
+        }
+    }
 
     /* Smoothly slides the entire styled deck onto the screen */
     .nav-links.active {
@@ -182,6 +205,7 @@ html, body {
         cursor: crosshair;
         transform: scale(1.1);
     }
+    
 }
 
 /* FULLSCREEN LOADER */
