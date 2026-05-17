@@ -20,39 +20,29 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// Initial state
-sections.forEach(sec => {
-    sec.style.opacity = "0";
-    sec.style.transform = "translateY(40px)";
-    sec.style.transition = "0.6s";
-});
 
-// Cycle through slideshow images
-// Grab all the images inside the slideshow
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
+// Bulletproof Navbar Toggle with Auto-Close
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Grab all the individual links inside the dropdown
+    const menuItems = document.querySelectorAll('.nav-links a');
 
-function nextSlide() {
-  // 1. Fade out the current image
-  slides[currentSlide].classList.remove('active');
-  
-  // 2. Calculate the next slide index (loops back to 0 at the end)
-  currentSlide = (currentSlide + 1) % slides.length;
-  
-  // 3. Fade in the new image
-  slides[currentSlide].classList.add('active');
-}
+    if (menuToggle && navLinks) {
+        // 1. Open/Close when the hamburger button is clicked
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-// Run the nextSlide function every 4 seconds (4000 milliseconds)
-setInterval(nextSlide, 4000); 
-
-
-
-const toggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav-links");
-
-toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
+        // 2. Auto-close the menu when any link is clicked
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // We use 'remove' instead of 'toggle' to ensure it absolutely closes
+                navLinks.classList.remove('active'); 
+            });
+        });
+    }
 });
 
 // Loading screen
@@ -68,23 +58,6 @@ window.addEventListener("load", function () {
         }, 500);
 
     }, 2000); // loader duration
-
-});
-
-// Scroll-based video scaling
-const video = document.getElementById("scrollVideo");
-
-window.addEventListener("scroll", () => {
-
-    let scrollY = window.scrollY;
-
-    // Adjust scale speed
-    let scale = 1 + scrollY * 0.0015;
-
-    // Limit maximum size
-    if (scale > 3) scale = 3;
-
-    video.style.transform = `scale(${scale})`;
 
 });
 
@@ -156,12 +129,4 @@ document.addEventListener("DOMContentLoaded", () => {
             slides[activeIndex].classList.add('active');
         }, 3000); 
     }
-});
-
-/* Navbar toggle for mobile */
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
 });

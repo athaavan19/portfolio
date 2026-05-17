@@ -115,39 +115,80 @@ body {
 
     .menu-toggle {
         display: block;
+        position: relative; 
+        z-index: 1001; 
+        /* Adds a subtle cyan glow to the hamburger icon when clicked */
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    
+    .menu-toggle:hover {
+        color: #00ffcc;
+        text-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
     }
 
     .navbar {
+        clip-path: none; 
+        backdrop-filter: none; 
         z-index: 1000;
         background-color: black;
         position: relative;
     }
 
     .nav-links {
-        /* CHANGED: Fixed positioning escapes the clip-path mask */
         position: fixed; 
-        top: 70px; /* Adjust this if your navbar is taller/shorter */
-        right: -100%; /* Pushes it completely off screen */
-        background: #111;
-        width: 200px;
+        top: 70px; 
+        right: -100%; 
+        width: 100%; /* Takes up the full width instead of just 200px */
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
-        border-left: 1px solid #333;
-        transition: 0.3s right ease-in-out; /* Smoother slide in */
-    }
-
-    .nav-links li {
-        margin: 15px 0;
+        justify-content: center; /* Centers the links vertically */
+        padding: 0;
+        transition: 0.4s right cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Snappy sci-fi slide-in */
     }
 
     .nav-links.active {
-        width: 100%;
-        /* CHANGED: Fills the viewport beneath the navbar */
         height: calc(100vh - 70px); 
-        background-color: black;
         right: 0;
         display: flex;
+        z-index: 9999; 
+        
+        /* The Cyberpunk Glass Backdrop */
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(0, 255, 204, 0.2);
+        
+        /* Subtle Scanner Lines */
+        background-image: linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+        background-size: 100% 4px;
+    }
+
+    /* Upgraded Mobile Typography */
+    .nav-links li {
+        margin: 25px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+        position: relative;
+    }
+
+    /* The "Director" Hover State */
+    .nav-links a:hover {
+        color: #00ffcc;
+        text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+        cursor: crosshair;
+        transform: scale(1.1);
     }
 }
 
@@ -241,12 +282,16 @@ body {
 }
 
 /* Title styling */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem; /* Shrunk down for mobile */
-        font-weight: bold;
-        margin: 0;
-    }
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.hero-title {
+    font-size: 2.5rem; /* Shrunk down for mobile */
+    font-weight: bold;
+    margin: 0;
 }
 /* Sub text */
 .hero-sub {
@@ -501,10 +546,11 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-/*body {
+body {
     margin: 0;
     background: black;
     height: 300vh; /* gives scroll space */
+}
 
 /* =========================================
    VIEWFINDER BUTTON (SECONDARY ACTION)
